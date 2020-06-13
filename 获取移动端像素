@@ -1,0 +1,3 @@
+var clientWidth = document.documentElement.clientWidth;
+        var clientWidth = window.screen.width;
+        var clientWidth = window.innerWidth;
