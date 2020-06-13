@@ -1,3 +1,4 @@
+//获取移动端屏幕宽度
 var clientWidth = document.documentElement.clientWidth;
-        var clientWidth = window.screen.width;
-        var clientWidth = window.innerWidth;
+var clientWidth = window.screen.width;
+var clientWidth = window.innerWidth;
