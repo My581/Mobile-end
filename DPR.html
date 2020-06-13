@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DPR适配</title>
+</head>
+<body>
+    <script>
+        //把css像素缩放成与设备一样大的尺寸
+        //一个css像素站一个物理像素
+
+        (function(){
+            //iphone6 为例
+            // 375 * 2 = 750;
+            //375/scal=750;   scal = 375/750
+            //                    dpr= 1/2
+
+            var dpr = window.devicePixelRatio;
+            var meta = document.querySelector('meta[name="viewport"]');
+            var scale = 1 / dpr;
+            if(!meta){
+                meta = document.createElement('meta');
+                meta.name = 'viewport';
+                meta.content = 'width=device-width, initial-scale='+scale+',user-scale=no,maximum-scale='+ scale +',minimum-scale='+scale+'';
+                document.head.appendChild(meta);
+            } else{
+                meta.setAttribute('content','width=device-width, initial-scale='+scale+',user-scale=no,maximum-scale='+ scale +',minimum-scale='+scale+'');
+            }
+        })()
+
+
+    </script>
+    
+</body>
+</html>
